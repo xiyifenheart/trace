@@ -1,0 +1,87 @@
+{
+    "code": 0,
+    "data": {
+        "startTime": "1489223128292",
+        "total": 5,
+        "entryIp": "0:0:0:0:0:0:0:1",
+        "globalId": 466,
+        "endTime": "1489223137643",
+        "rows": [
+            {
+                "startTime": "1489223129192",
+                "elapsed": 1,
+                "datasize": 0,
+                "typeCation": "LOCAL",
+                "flag": 0,
+                "requestId": "1.2.1.1",
+                "svcMethod": "testTx1",
+                "flagCation": "成功",
+                "endTime": "1489223129193",
+                "svcName": "com.hzecool.ec_test_dubbo.service.MqConsumerTest1",
+                "type": 8,
+                "toApp": "ecTest1",
+                "_parentId": "1.2.1"
+            },
+            {
+                "startTime": "1489223137594",
+                "elapsed": 1,
+                "datasize": 0,
+                "typeCation": "MQ",
+                "flag": 0,
+                "requestId": "1.2.1",
+                "svcMethod": "invokeListener",
+                "flagCation": "成功",
+                "endTime": "1489223129193",
+                "svcName": "com.hzecool.mq.client.listener.ConcurrentlyMessageListener",
+                "type": 6,
+                "toApp": "ecTest1",
+                "_parentId": "1.2"
+            },
+			{
+                "startTime": "1489223129086",
+                "elapsed": 57,
+                "datasize": 0,
+                "typeCation": "DUBBO",
+                "flag": 0,
+                "requestId": "1.2",
+                "svcMethod": "commit",
+                "flagCation": "成功",
+                "endTime": "1489223137643",
+                "svcName": "com.hzecool.mq.tx.client.TxMQService",
+                "type": 4,
+                "toApp": "ecBase",
+                "_parentId": "1"
+            },
+			{
+                "startTime": "1489223128320",
+                "elapsed": 51,
+                "datasize": 4,
+                "typeCation": "DUBBO",
+                "flag": 0,
+                "requestId": "1.1",
+                "svcMethod": "sendPrepare",
+                "flagCation": "成功",
+                "endTime": "1489223136904",
+                "svcName": "com.hzecool.mq.tx.client.TxMQService",
+                "type": 4,
+                "toApp": "ecBase",
+                "_parentId": "1"
+            },
+            {
+                "startTime": "1489223128292",
+                "elapsed": 799,
+                "datasize": 44,
+                "typeCation": "CLIENT",
+                "flag": 0,
+                "requestId": "1",
+                "svcMethod": "testTxSendMsgAction",
+                "flagCation": "成功",
+                "endTime": "1489223129089",
+                "svcName": "com.hzecool.ec_test.Service2",
+                "type": 2,
+                "toApp": "ecTest"
+            }
+        ]
+    },
+    "msg": "操作成功!"
+}

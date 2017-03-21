@@ -1,0 +1,4 @@
+export const CALL_CHAIN_TRACE_DATE = 'CALL_CHAIN_TRACE_DATE'
+export const GLOBAL_LIST = 'GLOBAL_LIST'
+export const GLOBAL_ID_CLICK = 'GLOBAL_ID_CLICK'
+export const TREE_GRID = 'TREE_GRID'

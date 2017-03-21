@@ -1,0 +1,118 @@
+.panel{
+    overflow: auto !important;
+}
+#PathAnalysed{
+    height: 100%;
+    width: 100%;
+}
+#PathAnalysed .tab{
+    height: 35px;
+    line-height: 35px;
+}
+#PathAnalysed .tab li{
+    height: 100%;
+    float: left;
+    color: #fff;
+    padding: 0 5px;
+    background-color: #4083ab;
+    cursor: pointer;
+}
+#PathAnalysed .tab .activeTab{
+    color: #000;
+    background-color: #fff;
+}
+#PathAnalysed .home-main-right-search{
+    padding: 16px 0 0 0;
+    margin: 0 0 10px 0;
+    height: 100px;
+    background-color: #fff;
+}
+#PathAnalysed .search-title{
+    margin: 0 0 15px 20px;
+    font-size:18px;
+    color:#8c8c8c;
+}
+#PathAnalysed .search-box{
+    text-indent: 20px;
+}
+#search{
+    height: 32px;
+    width: 330px;
+    text-indent: 14px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #bfcbd9;
+    color: #1f2d3d;
+    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+}
+.el-col-8{
+    text-align: center;
+}
+#PathAnalysed.searchbtn{
+    background:#4083ab;
+    border-color: #4083ab;
+    width:80px;
+    height:34px;
+}
+#PathAnalysed .msg{
+    background: #fff;
+    border-top: 4px solid #4083ab;
+    height: calc(100% - 40px);
+    padding: 0 20px 0 20px; 
+}
+#PathAnalysed .msg .msgid{
+    font-size: 18px;
+    color: #3d4245;
+    margin: 0 0 20px 0;
+}
+#PathAnalysed .msg .msginfo{
+    color: #8c8c8c;
+    font-size: 14px;
+    margin: 0 0 20px 0;
+}
+#PathAnalysed .globalList{
+    width: 100%;
+    height: 100%;
+}
+#PathAnalysed .globalIdListTitle{
+    height: 35px;
+    line-height: 28px;
+    font-weight: bold;
+}
+#PathAnalysed .global-list-search-box{
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 5;
+}
+#PathAnalysed .global-list-search-box-panel{
+    position: absolute;
+    background-color: #fff;
+    left: 50%;
+    top: 50%;
+    margin: -125px 0 0 -250px;
+    height: 250px;
+    width: 500px;
+    border-radius: 5px;
+}
+#PathAnalysed .global-list-search-box-panel p{
+    text-align: center;
+    height: 48px;
+    line-height: 48px;
+}
+#PathAnalysed .global-list-search-box-panel table{
+    width: 350px;
+    margin: 0 auto;
+}
+#PathAnalysed .global-list-search-box-panel table input,select{
+    border: 1px solid #bfcbd9;
+    height: 30px;
+    width: 100%;
+    border-radius: 3px;
+}
+#PathAnalysed .global-list-search-box-panel table tr{
+    height: 40px;
+}

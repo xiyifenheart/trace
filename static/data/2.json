@@ -1,0 +1,161 @@
+{
+    "code": 0,
+    "data": {
+        "total": 14,
+        "rows": [
+            {
+                "elapsed": 100,
+                "datasize": 0,
+                "flag": 0,
+                "request_id": "1.1.3.1.1",
+                "to_app": "ecTest",
+                "svc_name": "com.hzecool.ec_test.Service1",
+                "type": 8,
+                "_parentId": "1.1.3",
+                "svc_method": "testTt1"
+            },
+            {
+                "elapsed": 200,
+                "datasize": 15,
+                "flag": 0,
+                "request_id": "1.1.3.1.1",
+                "to_app": "ecTest",
+                "svc_name": "com.hzecool.ec_test.Service1",
+                "type": 7,
+                "_parentId": "1.1.3",
+                "svc_method": "testTt1"
+            },
+            {
+                "elapsed": 300,
+                "datasize": 0,
+                "flag": 0,
+                "request_id": "1.1.3.1",
+                "to_app": "ecTest",
+                "svc_name": "com.hzecool.mq.client.listener.ConcurrentlyMessageListener",
+                "type": 6,
+                "_parentId": "1.1",
+                "svc_method": "invokeListener"
+            },
+            {
+                "elapsed": 400,
+                "datasize": 15,
+                "flag": 0,
+                "request_id": "1.1.3.1",
+                "to_app": "ecTest",
+                "svc_name": "com.hzecool.mq.client.listener.ConcurrentlyMessageListener",
+                "type": 5,
+                "_parentId": "1.1",
+                "svc_method": "invokeListener"
+            },
+            {
+                "elapsed": 8077,
+                "datasize": 0,
+                "flag": 0,
+                "request_id": "1.1.3",
+                "to_app": "ecTest1",
+                "svc_name": "com.hzecool.ec_test_dubbo.service.MqConsumerTest1",
+                "type": 8,
+                "_parentId": "1",
+                "svc_method": "test1"
+            },
+            {
+                "elapsed": 500,
+                "datasize": 7,
+                "flag": 0,
+                "request_id": "1.1.3",
+                "to_app": "ecTest1",
+                "svc_name": "com.hzecool.ec_test_dubbo.service.MqConsumerTest1",
+                "type": 7,
+                "_parentId": "1",
+                "svc_method": "test1"
+            },
+            {
+                "elapsed": 600,
+                "datasize": 0,
+                "flag": 0,
+                "request_id": "1.1.2",
+                "to_app": "ecTest1",
+                "svc_name": "com.hzecool.ec_test_dubbo.service.MqConsumerTest1",
+                "type": 8,
+                "_parentId": "1",
+                "svc_method": "test3"
+            },
+            {
+                "elapsed": 700,
+                "datasize": 7,
+                "flag": 0,
+                "request_id": "1.1.2",
+                "to_app": "ecTest1",
+                "svc_name": "com.hzecool.ec_test_dubbo.service.MqConsumerTest1",
+                "type": 7,
+                "_parentId": "1",
+                "svc_method": "test3"
+            },
+            {
+                "elapsed": 800,
+                "datasize": 0,
+                "flag": 0,
+                "request_id": "1.1.1",
+                "to_app": "ecTest1",
+                "svc_name": "com.hzecool.ec_test_dubbo.service.MqConsumerTest1",
+                "type": 8,
+                "_parentId": "1",
+                "svc_method": "test2"
+            },
+            {
+                "elapsed": 56,
+                "datasize": 7,
+                "flag": 0,
+                "request_id": "1.1.1",
+                "to_app": "ecTest1",
+                "svc_name": "com.hzecool.ec_test_dubbo.service.MqConsumerTest1",
+                "type": 7,
+                "_parentId": "1",
+                "svc_method": "test2"
+            },
+            {
+                "elapsed": 8115,
+                "datasize": 0,
+                "flag": 0,
+                "request_id": "1.1",
+                "to_app": "ecTest1",
+                "svc_name": "com.hzecool.mq.client.listener.ConcurrentlyMessageListener",
+                "type": 6,
+                "_parentId": null,
+                "svc_method": "invokeListener"
+            },
+            {
+                "elapsed": 777,
+                "datasize": 7,
+                "flag": 0,
+                "request_id": "1.1",
+                "to_app": "ecTest1",
+                "svc_name": "com.hzecool.mq.client.listener.ConcurrentlyMessageListener",
+                "type": 5,
+                "_parentId": null,
+                "svc_method": "invokeListener"
+            },
+            {
+                "elapsed": 3493,
+                "datasize": 75,
+                "flag": 0,
+                "request_id": "1",
+                "to_app": "ecTest",
+                "svc_name": "com.hzecool.ec_test.Service2",
+                "type": 2,
+                "svc_method": "testSendMsgAction"
+            },
+            {
+                "elapsed": 656,
+                "datasize": 203,
+                "flag": 0,
+                "request_id": "1",
+                "to_app": "ecTest",
+                "svc_name": "com.hzecool.ec_test.Service2",
+                "type": 1,
+                "svc_method": "testSendMsgAction"
+            }
+        ]
+    },
+    "msg": "操作成功!"
+}
