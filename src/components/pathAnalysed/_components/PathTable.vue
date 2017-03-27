@@ -1,6 +1,6 @@
 <template>
 	<el-table
-		:data="tableData4"
+		:data="entrySvcListData"
 		border
 		style="width: 100%"
 		max-height="50%"
@@ -60,31 +60,32 @@
 </template>
 
 <script>
-	import Bus from '../../../config/bus.js'
+	import {mapActions, mapGetters} from 'vuex'
 	export default {
-		methods: {
+		computed: {
+			...mapGetters([
+				'entrySvcListData'
+			])
 		},
-		props: ['entrySvcListData'],
 		data() {
 			return {
-				tableData4: this.entrySvcListData
+				
 			}
 		},
 		methods: {
+			...mapActions([
+				'entrySvcListClick'
+			]),
 			cellClick (row, column, cell, event) {
 				var obj = {
 					entrySvc: row.entrySvc,
-					callDay: row.callDay.split(' ')[0]
+					callDay: row.callDay.split(' ')[0],
+					target: this.$parent
 				};
-				Bus.$emit('PathTableClick', obj);
+				this.entrySvcListClick(obj);
 			},
 			formatter (row, column) {
 				return row.elapsedAvg + 'ms';
-			}
-		},
-		watch: {
-			entrySvcListData: function (val, oldVal) {
-				this.tableData4 = this.entrySvcListData;
 			}
 		}
 	}

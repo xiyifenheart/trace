@@ -72,15 +72,13 @@
 
 <script>
   import {mapActions, mapGetters} from 'vuex'
-  import Bus from '../../../config/bus.js'
   export default {
     methods: {
       ...mapActions([
         'globalIdClick'
       ]),
       cellClick (row, column, cell, event) {
-        // this.globalIdClick(row.globalId);
-				Bus.$emit('globalIdClick', row.globalId);
+        this.globalIdClick([row.globalId, this.$parent]);
 			}
     },
     computed: {

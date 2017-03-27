@@ -5,12 +5,13 @@
       align="right"
       placeholder="选择日期范围"
       :picker-options="pickerOptions2"
-      @change="changeFunc">
+      @change="dateChangeFunc2">
     </el-date-picker>
 </template>
 
 <script>
-    import Bus from '../../../config/bus.js'
+    import {mapActions, mapGetters} from 'vuex'
+    // import Bus from '../../../config/bus.js'
     export default {
         data() {
             return {
@@ -45,9 +46,9 @@
             };
         },
         methods: {
-            changeFunc(val) {
-                Bus.$emit('dateChange', val.split(" - "));
-            }
+            ...mapActions([
+                'dateChangeFunc2'
+            ])
         }
     };
 </script>

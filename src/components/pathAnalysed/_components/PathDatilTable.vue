@@ -1,6 +1,6 @@
 <template>
   <el-table
-    :data="tableData4"
+    :data="entrySvcDetail"
     border
     style="width: 100%"
     max-height="50%">
@@ -80,13 +80,18 @@
 </template>
 
 <script>
+  import {mapActions, mapGetters} from 'vuex'
   export default {
     methods: {
     },
-    props: ['entrySvcDatil'],
+    computed: {
+      ...mapGetters([
+        'entrySvcDetail'
+      ])
+    },
     data() {
       return {
-        tableData4: this.entrySvcDatil
+        
       }
     },
     methods: {
@@ -102,23 +107,6 @@
         elapsedRateFormatter(row) {
           return row.elapsedRate + '%';
         }
-    },
-    watch: {
-      entrySvcDatil: function (val, oldVal) {
-        this.tableData4 = this.entrySvcDatil;
-        // orderArr(val);
-        // function orderArr(val) {
-        //     for (var i = 0; i < val.length; i++) {
-        //         if (val[i].layer == 0) {
-
-        //         } else if (val[i].layer == 1) {
-
-        //         } else if (val[i].layer == 2) {
-
-        //         } 
-        //     };
-        // };
-      }
     }
   }
 </script>

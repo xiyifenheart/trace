@@ -22,7 +22,7 @@
             <hr>
             <!--树形表格部分开始-->
             <div style="height: calc(100% - 120px); overflow: auto;">
-                <PathDatilTable :entrySvcDatil="entrySvcDatil"></PathDatilTable>
+                <PathDatilTable></PathDatilTable>
             </div>
             <!--树形表格部分结束-->
 
@@ -37,7 +37,7 @@
                     <el-button type="text" size="large" @click="modeBox = true">点击筛选</el-button>
                 </p>
                 <div style="max-height:calc(100% - 80px);overflow: auto;">
-                    <PathTable :entrySvcListData="entrySvcListData"></PathTable>
+                    <PathTable></PathTable>
                 </div>
                 <div style="text-align: center;height: 40px;padding: 8px 0 0 0;">
                     <el-pagination
@@ -81,10 +81,10 @@
     </div>
 </template>
 <script>
+    import {mapActions, mapGetters} from 'vuex'
     import DataPicker from './_components/DataPicker.vue'
     import PathTable from './_components/PathTable.vue'
     import PathDatilTable from './_components/PathDatilTable.vue'
-    import Bus from '../../config/bus.js'
     export default{
         name: 'PathAnalysed',
         data () {
@@ -95,81 +95,23 @@
                 searchbtn: 'searchbtn',     //定义搜索按钮的class
                 treeFlag: false,            //是否显示搜索日志路径详情页面
                 modeBox: false,      //是否显示筛选框
-                entryFilterObj: {
-                    entrySvcLike: '',
-                    callDay_fan1: '',
-                    callDay_fan2: '',
-                    pageOffset: 0,
-                    pageRows: 20
-                },
-                entrySvcListData: [
-                    {
-                        "qpsMax": "",
-                        "entrySvc": "",
-                        "svcMethod": "",
-                        "layer": "",
-                        "svcName": "",
-                        "id": "",
-                        "appName": "",
-                        "parentId": "",
-                        "elapsedAvg": "",
-                        "flag": "",
-                        "elapsedRate": "",
-                        "dependRate": "",
-                        "qpsAvg": "",
-                        "entryMethod": "",
-                        "callDay": "",
-                        "callCount": "",
-                        "invokeOrder": ""
-                    }
-                ],
-                entrySvcDatil: [
-                    {
-                        "qpsMax": "",
-                        "entrySvc": "",
-                        "svcMethod": "",
-                        "layer": "",
-                        "svcName": "",
-                        "id": "",
-                        "appName": "",
-                        "parentId": "",
-                        "elapsedAvg": "",
-                        "flag": "",
-                        "elapsedRate": "",
-                        "dependRate": "",
-                        "qpsAvg": "",
-                        "entryMethod": "",
-                        "callDay": "",
-                        "callCount": "",
-                        "invokeOrder": ""
-                    }
-                ],
                 totalCount: 1,          //分页总数
                 pageRows: 20
             }
         },
+        computed: {
+            ...mapGetters([
+                'entryFilterObj'
+            ])
+        },
         mounted: function () {
-            var _this = this;
-
             this.globalListFunc();
-
-            //获取datePicker中日期到变化
-            Bus.$on('dateChange', function (arr) {
-                console.log(arr);
-                _this.entryFilterObj.callDay_fan1 = arr[0];
-                _this.entryFilterObj.callDay_fan2 = arr[1];
-            });
-            Bus.$on('PathTableClick', function (obj) {
-                console.log(obj);
-                _this.entrySvcDatilDate = obj.callDay;
-                _this.entrySvcDatilDateFormat = obj.callDay;
-                _this.inputEntrySvc = obj.entrySvc;
-                _this.treeFlag = true;
-                _this.search();
-            });
-
         },
         methods: {
+            ...mapActions([
+                'entrySvcList',
+                'entrySvcDetail'
+            ]),
             entrySvcDatilDateChangeFunc(val) {
                 this.entrySvcDatilDateFormat = val;
             },
@@ -202,7 +144,7 @@
                 */
                 _this.$api.jsonp('trace/api.do', params, function (res) {
                     console.log(res);
-                    _this.entrySvcDatil = res.data.rows;
+                    _this.entrySvcDetail(res.data.rows);
                 },function () {
 
                 });
@@ -228,7 +170,7 @@
                 console.log(this.entryFilterObj);
                 _this.$api.jsonp('trace/api.do', params, function (res) {
                     _this.totalCount = res.data.total;
-                    _this.entrySvcListData = res.data.rows;
+                    _this.entrySvcList(res.data.rows);
                     _this.modeBox = false;
                     console.log(res);
                 },function () {

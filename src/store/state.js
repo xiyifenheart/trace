@@ -31,7 +31,57 @@ const state = {
     //TreeGrid.vue
     startTime: '',
     endTime: '',
-    treeGridData: []
+    treeGridData: [],
+    //DatePicker.vue
+    entryFilterObj: {
+        entrySvcLike: '',
+        callDay_fan1: '',
+        callDay_fan2: '',
+        pageOffset: 0,
+        pageRows: 20
+    },
+    entrySvcListData: [
+        {
+            "qpsMax": "",
+            "entrySvc": "",
+            "svcMethod": "",
+            "layer": "",
+            "svcName": "",
+            "id": "",
+            "appName": "",
+            "parentId": "",
+            "elapsedAvg": "",
+            "flag": "",
+            "elapsedRate": "",
+            "dependRate": "",
+            "qpsAvg": "",
+            "entryMethod": "",
+            "callDay": "",
+            "callCount": "",
+            "invokeOrder": ""
+        }
+    ],
+    entrySvcDetail: [
+        {
+            "qpsMax": "",
+            "entrySvc": "",
+            "svcMethod": "",
+            "layer": "",
+            "svcName": "",
+            "id": "",
+            "appName": "",
+            "parentId": "",
+            "elapsedAvg": "",
+            "flag": "",
+            "elapsedRate": "",
+            "dependRate": "",
+            "qpsAvg": "",
+            "entryMethod": "",
+            "callDay": "",
+            "callCount": "",
+            "invokeOrder": ""
+        }
+    ]
 
 }
 

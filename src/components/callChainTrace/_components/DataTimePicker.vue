@@ -47,10 +47,7 @@
         methods: {
             ...mapActions([
                 'dateChangeFunc'
-            ]),
-            // changeFunc(val) {
-            //     this.$emit('dateChange', val.split(" - "));
-            // }
+            ])
         }
     }
 </script>

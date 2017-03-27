@@ -125,7 +125,6 @@
     import DataTimePicker from './_components/DataTimePicker.vue'
     import TreeGrid from './_components/TreeGrid.vue'
     import GlobalListTable from './_components/GlobalListTable.vue'
-    import Bus from '../../config/bus.js'
     export default{
         name: 'CallChainTrance',
         data () {
@@ -144,17 +143,7 @@
             }
         },
         mounted: function () {
-            var _this = this;
-
             this.globalListFunc();
-
-            Bus.$on('globalIdClick', function (clickId) {
-                console.log(typeof clickId);
-                _this.inputGlobalId = clickId + '';
-                _this.treeFlag = true;
-                _this.treeGridFlag = true;
-                _this.search();
-            });
         },
         computed: {
             ...mapGetters([
@@ -164,8 +153,7 @@
         methods: {
             ...mapActions([
                 'globalList',
-                'treegrid',
-                'search'
+                'treegrid'
             ]),
             //点击搜索按钮
             search () {
@@ -201,11 +189,7 @@
                     _this.entryIp = res.data.entryIp;
                     _this.elapsed = res.data.endTime - res.data.startTime;
                     _this.startTime = _this.getLocalTime(res.data.startTime);
-
-                    //触发子组件treegrid中的getMsg方法
-                    // _this.$children[1].getMsg(res);
                     _this.treegrid(res);
-                    
                 },function () {
 
                 });
